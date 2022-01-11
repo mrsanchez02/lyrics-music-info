@@ -28,8 +28,11 @@ function App() {
         axios.get(URL2)
       ]).catch( error => {
         setError(true)
+        setTimeout(()=>{
+          setError(false)
+        },2500)
       });
-      
+
       setError(false);
       setLyrics(lyrics.data.lyrics);
       setInfo(informacion.data.artists[0]);
@@ -46,7 +49,7 @@ function App() {
       />
       <div className='container'>
       {error ? <Error mensaje="Artista o cancion no encontrados."/> : null}
-        <div className='row'>
+        <div className='row mt-5'>
           <div className='col-md-6'>
             <Info
               info={info}

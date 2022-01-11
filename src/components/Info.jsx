@@ -15,7 +15,11 @@ const Info = ({info}) => {
                 <img src={strArtistThumb} alt="Logo Artista" />
                 <p className='card-text'>Genero: {strGenre}</p>
                 <h2 className='card-text'>Biografia:</h2>
-                <p className='card-text'>{strBiographyES}</p>
+                {
+                    strBiographyES===null?
+                    <p className='alert alert-info text-center p-2'>Oops! Lo sentimos, no tenemos la biografia de este artista.</p>:
+                    strBiographyES
+                }
                 <p className='card-text'>
                 <a href={`https://${info.strFacebook}`} target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-facebook"></i>
