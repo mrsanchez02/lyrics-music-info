@@ -18,7 +18,7 @@ const Info = ({info}) => {
                 {
                     strBiographyES===null?
                     <p className='alert alert-info text-center p-2'>Oops! Lo sentimos, no tenemos la biografia de este artista.</p>:
-                    strBiographyES
+                    <p className='card-text'>{strBiographyES}</p>
                 }
                 <p className='card-text'>
                 <a href={`https://${info.strFacebook}`} target="_blank" rel="noopener noreferrer">
